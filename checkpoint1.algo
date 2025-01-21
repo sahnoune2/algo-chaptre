@@ -1,0 +1,31 @@
+ALGORITHM checkpoint1
+VAR
+
+    voy : ARRAY_OF CHAR["a","e","i","y","o","u"];
+    ch:STRING
+    numVoy:INTEGER
+    numWords:INTEGER
+    stringLength:INTEGER
+    numVoy:=0
+    numWords:=0
+    i:INTEGER
+BEGIN
+read(ch)
+
+stringLength:=ch.length
+
+    FOR i FROM 0 TO stringLength-1 STEP 1  DO
+        IF (ch[i] IN voy) THEN
+            numVoy:=numVoy+1;
+
+        END_IF
+
+        IF (ch[i]=" " OR ch[i]=".") THEN
+            numWords:=numWords+1
+        END_IF
+    END_FOR
+
+    write("the length of the string is :" stringLength )
+    write("the number of voy in  the string is :" numVoy )
+    write("the number of words in the string is :" numWords)
+END
